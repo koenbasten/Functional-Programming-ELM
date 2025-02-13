@@ -1,5 +1,7 @@
 module Caeser exposing (..)
 
+--TODO Fix negative Offset
+
 encode: Int -> Char -> Char
 encode offset char =
     if (Char.isAlpha char) then 
