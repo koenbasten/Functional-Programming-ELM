@@ -17,7 +17,7 @@ decode offset char =
         char
 
    
-calcOffset: Int -> Int -> Bool -> Int
+calcOffset: Int -> Int -> Bool -> Int -- The bool is to determine if we are encoding or decoding
 calcOffset charCode offset encodeBool= 
     if encodeBool then 
         if ( charCode + offset > 122) then 

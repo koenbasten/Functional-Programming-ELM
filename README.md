@@ -6,6 +6,8 @@ Welcome to the repository for the Functional Programming course at Fontys Univer
 
 This course serves as an academic preparation for students, providing a solid foundation in functional programming concepts. Throughout the course, we used the ELM programming language to explore various functional programming techniques and paradigms.
 
+See the Assignments.pdf file to see the exercises that have been made
+
 ## Topics Covered
 
 - Introduction to Functional Programming
