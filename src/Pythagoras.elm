@@ -38,3 +38,18 @@ pythTriple ( x, y ) =
 isTripleTuple : ( Int, Int, Int ) -> Bool
 isTripleTuple ( a, b, c ) =
     isTriple a b c
+
+
+pythTriplesMap : List ( Int, Int ) -> List ( Int, Int, Int )
+pythTriplesMap list =
+    List.map pythTriple list
+
+
+pythTriplesRec : List ( Int, Int ) -> List ( Int, Int, Int )
+pythTriplesRec list =
+    case list of
+        [] ->
+            []
+
+        e :: rest ->
+            pythTriple e :: pythTriplesRec rest
