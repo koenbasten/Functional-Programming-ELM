@@ -32,3 +32,17 @@ encode offset c =
 decode : Int -> Char -> Char
 decode offset c =
     encode -offset c
+
+
+normalize : String -> String
+normalize message =
+    case String.uncons message of
+        Nothing ->
+            ""
+
+        Just ( char, rest ) ->
+            if Char.isAlpha char then
+                String.cons char (normalize rest)
+
+            else
+                normalize rest
