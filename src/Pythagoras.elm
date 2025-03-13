@@ -53,3 +53,22 @@ pythTriplesRec list =
 
         e :: rest ->
             pythTriple e :: pythTriplesRec rest
+
+
+arePythTriplesFilter : List ( Int, Int, Int ) -> List ( Int, Int, Int )
+arePythTriplesFilter list =
+    List.filter isTripleTuple list
+
+
+arePythTriplesRec : List ( Int, Int, Int ) -> List ( Int, Int, Int )
+arePythTriplesRec list =
+    case list of
+        [] ->
+            []
+
+        e :: rest ->
+            if isTripleTuple e then
+                e :: arePythTriplesRec rest
+
+            else
+                arePythTriplesRec rest
