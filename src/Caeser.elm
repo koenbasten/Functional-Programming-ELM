@@ -1,36 +1,34 @@
 module Caeser exposing (..)
 
---TODO Fix negative Offset
+import Basics exposing (..)
+import Char exposing (Char)
 
-encode: Int -> Char -> Char
-encode offset char =
-    if (Char.isAlpha char) then 
-        Char.fromCode((calcOffset (Char.toCode(char)) offset True))
+
+getBase : Char -> Int
+getBase c =
+    if Char.isUpper c then
+        Char.toCode 'A'
+
     else
-        char
+        Char.toCode 'a'
 
-decode: Int -> Char -> Char
-decode offset char =
-    if (Char.isAlpha char) then 
-        Char.fromCode((calcOffset (Char.toCode(char)) offset False))
+
+encode : Int -> Char -> Char
+encode offset c =
+    let
+        base =
+            getBase c
+
+        val =
+            Char.toCode c
+    in
+    if Char.isAlpha c then
+        Char.fromCode (modBy 26 (val - base + offset) + base)
+
     else
-        char
+        c
 
-   
-calcOffset: Int -> Int -> Bool -> Int -- The bool is to determine if we are encoding or decoding
-calcOffset charCode offset encodeBool= 
-    if encodeBool then 
-        if ( charCode + offset > 122) then 
-                charCode + offset - 26
-            else if (  charCode + offset > 90 && charCode <= 90) then
-                charCode + offset - 26
-            else 
-                charCode + offset      
-    else 
-         if ( charCode - offset < 97 && charCode >= 97) then
-                charCode - offset + 26
-            else if (  charCode - offset < 65) then
-                charCode - offset + 26
-            else 
-                charCode - offset
-    
+
+decode : Int -> Char -> Char
+decode offset c =
+    encode -offset c
