@@ -51,3 +51,24 @@ encode offset message =
 decode : Int -> String -> String
 decode offset message =
     encode -offset message
+
+
+encode1 : Int -> Char -> Char
+encode1 offset c =
+    let
+        base =
+            getBase c
+
+        val =
+            Char.toCode c
+    in
+    if Char.isAlpha c then
+        Char.fromCode (modBy 26 (val - base + offset) + base)
+
+    else
+        c
+
+
+encrypt : Int -> String -> String
+encrypt =
+    String.map << encode1
