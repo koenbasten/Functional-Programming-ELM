@@ -18,3 +18,6 @@ See the Assignments.pdf file to see the exercises that have been made
 - Error Handling and Functional Design
 
 The course is divided into weekly modules, each focusing on different aspects of functional programming. Assignments and exercises are provided to reinforce the concepts learned in each module.
+
+TODO:
+-- records
