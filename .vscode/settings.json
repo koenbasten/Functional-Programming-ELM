@@ -1,0 +1,7 @@
+{
+    "[elm]": {
+        "editor.defaultFormatter": "elm-land.elm-land"
+    },
+    "notebook.formatOnSave.enabled": true,
+    "files.autoSave": "off"
+}
