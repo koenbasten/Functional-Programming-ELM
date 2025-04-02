@@ -1,4 +1,4 @@
-module Repos exposing (Player, castSpell, introduce, revive)
+module Maybe exposing (Player, castSpell, introduce, revive)
 
 
 type alias Player =

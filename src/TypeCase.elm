@@ -1,4 +1,4 @@
-module Repos exposing (..)
+module TypeCase exposing (..)
 
 
 type Approval
